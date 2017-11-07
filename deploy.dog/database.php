@@ -67,14 +67,14 @@
 class DATABASE_CONFIG {
 
 	public $default = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'database_name',
-		'prefix' => '',
-		'encoding' => 'utf8',
+		'datasource' => '{{ passbolt_db_datasource::"Database/Mysql" }}',
+		'persistent' => {{ passbolt_db_persistent::"false" }},
+		'host' => '{{ passbolt_db_host::"localhost" }}',
+		'login' => '{{ passbolt_db_login }}',
+		'password' => '{{ passbolt_db_password }}',
+		'database' => '{{ passbolt_db_database::"passbolt" }}',
+		'prefix' => '{{ passbolt_db_prefix::"" }}',
+		'encoding' => '{{ passbolt_db_encoding::"utf8" }}',
 	);
 
 	public $test = array(
