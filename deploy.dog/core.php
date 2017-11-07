@@ -123,7 +123,7 @@ require_once dirname(__DIR__) . '/Vendor/autoload.php';
  * will override the automatic detection of full base URL and can be
  * useful when generating links from the CLI (e.g. sending emails)
  */
-	//Configure::write('App.fullBaseUrl', 'http://example.com');
+	Configure::write('App.fullBaseUrl', '{{ passbolt_fullbaseurl }}');
 
 /**
  * Web path to the public images directory under webroot.
@@ -230,12 +230,12 @@ require_once dirname(__DIR__) . '/Vendor/autoload.php';
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi');
+	Configure::write('Security.salt', '{{ passbolt_salt::"DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi" }}');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '76859309657453542496749683645');
+	Configure::write('Security.cipherSeed', '{{ passbolt_seed::"76859309657453542496749683645" }}');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
