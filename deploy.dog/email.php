@@ -37,14 +37,14 @@
 class EmailConfig {
 
 	public $default = array(
-		'transport' => 'Smtp',
-		'from' => array('contact@passbolt.com' => 'Passbolt'),
-		'host' => 'smtp.mandrillapp.com',
-		'port' => 587,
-		'timeout' => 30,
-		'username' => '',
-		'password' => '',
-		'tls' => false,
+		'transport' => '{{ passbolt_email_transport::"Smtp" }}',
+		'from' => array('{{ passbolt_email_from_email::"contact@passbolt.com" }}' => '{{ passbolt_email_from_name::"Passbolt" }}'),
+		'host' => '{{ passbolt_email_host::"smtp.mandrillapp.com" }}',
+		'port' => {{ passbolt_email_port::"587" }},
+		'timeout' => 3{{ passbolt_email_timeout::"0" }},
+		'username' => '{{ passbolt_email_username }}',
+		'password' => '{{ passbolt_email_password }}',
+		'tls' => {{ passbolt_email_tls::"false" }},
 	);
 
 	public $smtp = array(
